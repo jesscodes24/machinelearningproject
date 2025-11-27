@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import joblib
 
 model = joblib.load("model/lr_model.pkl")
@@ -24,4 +24,5 @@ if st.button("Predict Price"):
     features_scaled = scaler.transform(features)
     prediction = model.predict(features_scaled)
     
+
     st.success(f"Predicted Price: ${prediction[0] * 100000:.2f}")
